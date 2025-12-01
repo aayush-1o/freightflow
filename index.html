@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FreightFlow - India's leading logistics platform connecting shippers with verified drivers. Fast, reliable, and cost-effective freight transportation.">
+    <meta name="keywords" content="logistics, freight, trucking, shipping, transportation, india">
+    <title>FreightFlow - Smart Logistics Platform for Modern Business</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',      // Professional Blue
+                        secondary: '#64748b',    // Slate Gray
+                        accent: '#f97316',       // Vibrant Orange
+                        success: '#16a34a',      // Green
+                        dark: '#0f172a',         // Dark Navy
+                        light: '#f8fafc'         // Light Gray
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Utility Classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .btn-primary {
+            @apply bg-primary hover:bg-blue-900 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+        }
+
+        .btn-accent {
+            @apply bg-accent hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+        }
+
+        .btn-outline {
+            @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300;
+        }
+
+        .card-hover {
+            @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Pulse Animation for CTA */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+            50% { box-shadow: 0 0 20px 10px rgba(249, 115, 22, 0); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white antialiased">
+
+    <!-- Top Info Bar -->
+    <div class="bg-primary text-white py-2 text-sm">
+        <div class="container mx-auto px-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-6">
+                <a href="tel:+911800123456" class="flex items-center gap-2 hover:text-orange-300 transition">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>+91 1800-123-456</span>
+                </a>
+                <a href="mailto:support@freightflow.in" class="flex items-center gap-2 hover:text-orange-300 transition">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>support@freightflow.in</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    24/7 Support Available
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass shadow-lg sticky top-0 z-50 border-b border-gray-100" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <i data-lucide="truck" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-dark">
+                        Freight<span class="text-primary">Flow</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="text-dark hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="#features" class="text-dark hover:text-primary font-medium transition-colors">Features</a>
+                    <a href="#pricing" class="text-dark hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-dark hover:text-primary font-medium transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="#quote" class="flex items-center gap-2 text-primary font-semibold hover:text-orange-600 transition">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        Get Quote
+                    </a>
+                    <a href="pages/login.html" class="px-6 py-2.5 text-primary font-semibold hover:text-blue-900 transition">
+                        Login
+                    </a>
+                    <a href="pages/register.html" class="bg-accent hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Sign Up Free
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-dark hover:text-primary transition">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-6 pb-6 border-t border-gray-200 pt-6">
+                <div class="flex flex-col gap-4">
+                    <a href="#home" class="text-dark hover:text-primary font-medium py-2 transition">Home</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium py-2 transition">Services</a>
+                    <a href="#features" class="text-dark hover:text-primary font-medium py-2 transition">Features</a>
+                    <a href="#pricing" class="text-dark hover:text-primary font-medium py-2 transition">Pricing</a>
+                    <a href="#testimonials" class="text-dark hover:text-primary font-medium py-2 transition">Testimonials</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium py-2 transition">Contact</a>
+                    <a href="#quote" class="text-primary font-semibold py-2">Get Quote</a>
+                    <a href="pages/login.html" class="text-primary font-semibold py-2">Login</a>
+                    <a href="pages/register.html" class="bg-accent text-white px-6 py-3 rounded-lg text-center font-semibold">
+                        Sign Up Free
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-20 pb-32 bg-gradient-to-br from-blue-50 via-white to-orange-50 overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-30 animate-float" style="animation-delay: 1s;"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 bg-green-100 text-success px-4 py-2 rounded-full mb-6">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i>
+                        <span class="font-semibold text-sm">Trusted by 10,000+ Users</span>
+                    </div>
+
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-dark mb-6 leading-tight">
+                        India's Most <br/>
+                        <span class="text-primary">Reliable</span> <br/>
+                        Logistics Platform
+                    </h1>
+
+                    <p class="text-xl text-secondary mb-8 leading-relaxed">
+                        Connect with 5,000+ verified drivers instantly. Real-time tracking, secure payments, and transparent pricing—all in one platform.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <a href="pages/register.html" class="btn-accent pulse-glow flex items-center justify-center gap-2">
+                            <i data-lucide="rocket" class="w-5 h-5"></i>
+                            Get Started Free
+                        </a>
+                        <a href="#quote" class="btn-outline flex items-center justify-center gap-2">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            Calculate Cost
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div>
+                            <div class="text-3xl font-bold text-primary mb-1">5,000+</div>
+                            <p class="text-sm text-secondary">Verified Drivers</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary mb-1">200+</div>
+                            <p class="text-sm text-secondary">Cities Covered</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary mb-1">4.8★</div>
+                            <p class="text-sm text-secondary">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Quick Quote Form -->
+                <div data-aos="fade-left">
+                    <div class="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="zap" class="w-6 h-6 text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-dark">Get Instant Quote</h3>
+                                <p class="text-sm text-secondary">Free estimate in 30 seconds</p>
+                            </div>
+                        </div>
+
+                        <form id="quote-form" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-dark mb-2">Pickup Location</label>
+                                <div class="relative">
+                                    <i data-lucide="map-pin" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                                    <input type="text" placeholder="Enter city or pincode" class="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-dark mb-2">Delivery Location</label>
+                                <div class="relative">
+                                    <i data-lucide="flag" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                                    <input type="text" placeholder="Enter city or pincode" class="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-dark mb-2">Weight (kg)</label>
+                                    <input type="number" placeholder="1000" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-dark mb-2">Vehicle Type</label>
+                                    <select class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition">
+                                        <option>Mini Truck</option>
+                                        <option>Standard Truck</option>
+                                        <option>Container</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="calculateQuote()" class="w-full btn-accent">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                                    Calculate Price
+                                </span>
+                            </button>
+
+                            <div id="quote-result" class="hidden bg-green-50 border-2 border-success rounded-xl p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm text-secondary mb-1">Estimated Cost</p>
+                                        <p class="text-3xl font-bold text-success">₹12,500</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm text-secondary mb-1">Distance</p>
+                                        <p class="text-xl font-bold text-dark">450 km</p>
+                                    </div>
+                                </div>
+                                <button class="w-full mt-4 bg-success hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
+                                    Book Now
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="mt-6 flex items-center justify-center gap-4 text-sm text-secondary">
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-success"></i>
+                                100% Secure
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="zap" class="w-4 h-4 text-accent"></i>
+                                Instant Matching
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="py-12 bg-white border-y border-gray-100">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-secondary font-semibold mb-8 uppercase tracking-wider text-sm">Trusted By Industry Leaders</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale">
+                <span class="text-2xl font-bold">TATA Motors</span>
+                <span class="text-2xl font-bold">Reliance</span>
+                <span class="text-2xl font-bold">Amazon</span>
+                <span class="text-2xl font-bold">Flipkart</span>
+                <span class="text-2xl font-bold">BigBasket</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-6 py-2 bg-blue-100 text-primary rounded-full font-semibold mb-4 text-sm">Our Services</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">
+                    Complete Logistics <span class="text-primary">Solutions</span>
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">Tailored services for every transportation need</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="package" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Full Truck Load (FTL)</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Dedicated truck for your cargo. Best for large shipments. Door-to-door delivery with no intermediate stops.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Faster delivery times
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Better cargo security
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Cost-effective for bulk
+                        </li>
+                    </ul>
+                    <a href="#quote" class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="boxes" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Part Truck Load (PTL)</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Share truck space, pay only for what you use. Perfect for small to medium shipments with flexible timing.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Pay only for space used
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Economical for small loads
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Regular service availability
+                        </li>
+                    </ul>
+                    <a href="#quote" class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Express Delivery</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Time-critical shipments delivered fast. Priority handling with guaranteed delivery windows and real-time tracking.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Same-day delivery option
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Priority handling
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            24/7 tracking support
+                        </li>
+                    </ul>
+                    <a href="#quote" class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="thermometer" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Temperature Controlled</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Refrigerated trucks for perishables. Maintain cold chain integrity from pickup to final delivery destination.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Temperature monitoring
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Cold chain compliance
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Certified refrigeration
+                        </li>
+                    </ul>
+                    <a href="#quote" class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Get Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Cargo Insurance</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Comprehensive coverage for your shipments. Protection against damage, theft, and accidents during transit.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Up to ₹10L coverage
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Quick claim process
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Affordable premiums
+                        </li>
+                    </ul>
+                    <a href="#quote" class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="repeat" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Return Logistics</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Hassle-free returns and reverse logistics. Efficient handling of product returns, exchanges, and recalls.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Seamless reverse flow
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Quality inspection
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-success"></i>
+                            Refund processing
+                        </li>
+                    </ul>
+                    <a href="#quote" class="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-6 py-2 bg-orange-100 text-accent rounded-full font-semibold mb-4 text-sm">Platform Features</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">
+                    Everything You Need in <span class="text-primary">One Platform</span>
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">Powerful tools to streamline your logistics operations</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="search" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Smart Matching</h3>
+                    <p class="text-secondary">AI finds the perfect driver for your route in seconds</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="map-pin" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Live GPS Tracking</h3>
+                    <p class="text-secondary">Monitor your shipment in real-time with precision</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Verified Network</h3>
+                    <p class="text-secondary">All drivers undergo thorough background checks</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="credit-card" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Secure Payments</h3>
+                    <p class="text-secondary">Escrow protection with multiple payment options</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Digital Docs</h3>
+                    <p class="text-secondary">E-way bills, POD, invoices—all in the cloud</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="bell" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Smart Alerts</h3>
+                    <p class="text-secondary">Real-time notifications via SMS, email, and app</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="bar-chart" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Analytics Dashboard</h3>
+                    <p class="text-secondary">Track costs, performance, and delivery metrics</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="700">
+                    <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition">
+                        <i data-lucide="headphones" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">24/7 Support</h3>
+                    <p class="text-secondary">Dedicated team always ready to assist you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-6 py-2 bg-blue-100 text-primary rounded-full font-semibold mb-4 text-sm">Simple Process</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">
+                    How <span class="text-primary">FreightFlow</span> Works
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">Get started in minutes with our streamlined process</p>
+            </div>
+
+            <!-- For Shippers -->
+            <div class="mb-20">
+                <div class="flex items-center justify-center gap-3 mb-12" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                        <i data-lucide="package" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark">For Shippers</h3>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="relative" data-aos="fade-up" data-aos-delay="0">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl font-bold">
+                                1
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Post Your Shipment</h4>
+                            <p class="text-secondary mb-6">
+                                Enter pickup/delivery details, cargo type, weight, and preferred dates. Our system instantly searches for available drivers.
+                            </p>
+                            <div class="bg-blue-50 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-primary mb-2">Takes only 2 minutes</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Quick Form</span>
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Auto-fill</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-8">
+                            <i data-lucide="arrow-right" class="w-8 h-8 text-primary"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl font-bold">
+                                2
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Choose Your Driver</h4>
+                            <p class="text-secondary mb-6">
+                                Review verified profiles with ratings, pricing, and vehicle details. Compare and select the best match for your needs.
+                            </p>
+                            <div class="bg-blue-50 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-primary mb-2">Smart recommendations</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Ratings</span>
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-8">
+                            <i data-lucide="arrow-right" class="w-8 h-8 text-primary"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl font-bold">
+                                3
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Track & Relax</h4>
+                            <p class="text-secondary mb-6">
+                                Monitor real-time GPS tracking, receive updates, and pay securely upon successful delivery. Rate your experience.
+                            </p>
+                            <div class="bg-blue-50 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-primary mb-2">Complete transparency</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Live GPS</span>
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Updates</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- For Drivers -->
+            <div>
+                <div class="flex items-center justify-center gap-3 mb-12" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                        <i data-lucide="truck" class="w-6 h-6 text-accent"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark">For Drivers</h3>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="relative" data-aos="fade-up" data-aos-delay="0">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl font-bold">
+                                1
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Register Profile</h4>
+                            <p class="text-secondary mb-6">
+                                Sign up with vehicle details, licenses, and documents. Get verified within 24 hours and gain access to thousands of loads.
+                            </p>
+                            <div class="bg-orange-50 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-accent mb-2">Quick approval</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">24h Verify</span>
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-8">
+                            <i data-lucide="arrow-right" class="w-8 h-8 text-accent"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl font-bold">
+                                2
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Accept Loads</h4>
+                            <p class="text-secondary mb-6">
+                                Browse available shipments on your preferred routes. Accept bookings that fit your schedule and maximize earnings.
+                            </p>
+                            <div class="bg-orange-50 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-accent mb-2">Zero empty returns</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Filter Routes</span>
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Instant</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-8">
+                            <i data-lucide="arrow-right" class="w-8 h-8 text-accent"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl font-bold">
+                                3
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Deliver & Earn</h4>
+                            <p class="text-secondary mb-6">
+                                Complete deliveries safely, upload POD, and receive instant payment. Build reputation with positive reviews and ratings.
+                            </p>
+                            <div class="bg-orange-50 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-accent mb-2">Instant payment</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">UPI</span>
+                                    <span class="px-3 py-1 bg-white rounded-lg text-xs font-medium">Bank</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-6 py-2 bg-green-100 text-success rounded-full font-semibold mb-4 text-sm">Transparent Pricing</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">
+                    Simple, Honest <span class="text-primary">Pricing</span>
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">No hidden fees. Pay only for what you use.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-dark mb-2">Basic</h3>
+                        <p class="text-secondary mb-6">Perfect for occasional shippers</p>
+                        <div class="text-5xl font-extrabold text-dark mb-2">₹0</div>
+                        <p class="text-sm text-secondary">Forever free</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Up to 5 shipments/month</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Basic GPS tracking</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Email support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Digital documentation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x" class="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-400">Priority support</span>
+                        </li>
+                    </ul>
+                    <a href="pages/register.html" class="block w-full btn-outline text-center">
+                        Get Started Free
+                    </a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-gradient-to-br from-primary to-blue-700 rounded-2xl p-8 shadow-2xl border-2 border-primary relative transform scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-6 py-2 rounded-full text-sm font-bold">
+                        MOST POPULAR
+                    </div>
+                    <div class="text-center mb-8 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <p class="text-blue-100 mb-6">For growing businesses</p>
+                        <div class="text-5xl font-extrabold mb-2">₹999</div>
+                        <p class="text-sm text-blue-100">per month</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-white">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>Unlimited shipments</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>Real-time GPS tracking</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>Priority 24/7 support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>API access</span>
+                        </li>
+                    </ul>
+                    <a href="pages/register.html" class="block w-full bg-white text-primary hover:bg-orange-50 font-semibold px-8 py-4 rounded-xl transition-all text-center">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-dark mb-2">Enterprise</h3>
+                        <p class="text-secondary mb-6">For large organizations</p>
+                        <div class="text-5xl font-extrabold text-dark mb-2">Custom</div>
+                        <p class="text-sm text-secondary">Contact for pricing</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Everything in Pro</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>Custom integrations</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>SLA guarantees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+                            <span>White-label options</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full btn-primary text-center">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-secondary mt-12" data-aos="fade-up">
+                All plans include secure payments, digital documentation, and mobile app access
+            </p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-6 py-2 bg-blue-100 text-primary rounded-full font-semibold mb-4 text-sm">Testimonials</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">
+                    Loved by <span class="text-primary">10,000+</span> Users
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">See what our customers have to say</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        "FreightFlow has transformed our logistics operations. We've reduced costs by 30% and improved delivery times significantly. The real-time tracking is a game-changer!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
+                            RK
+                        </div>
+                        <div>
+                            <p class="font-bold text-dark">Rajesh Kumar</p>
+                            <p class="text-sm text-secondary">Supply Chain Manager, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        "As a driver, FreightFlow has helped me eliminate empty return trips. I'm earning 40% more now. The platform is easy to use and payments are always on time."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center text-white font-bold">
+                            AS
+                        </div>
+                        <div>
+                            <p class="font-bold text-dark">Amit Singh</p>
+                            <p class="text-sm text-secondary">Independent Truck Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        "Excellent service! The verified driver network gives us peace of mind. Customer support is responsive and helpful. Highly recommend for any business needing reliable logistics."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white font-bold">
+                            PM
+                        </div>
+                        <div>
+                            <p class="font-bold text-dark">Priya Mehta</p>
+                            <p class="text-sm text-secondary">CEO, FreshFarm Organic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute w-96 h-96 bg-white rounded-full blur-3xl top-0 left-0"></div>
+            <div class="absolute w-96 h-96 bg-white rounded-full blur-3xl bottom-0 right-0"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-5xl lg:text-6xl font-extrabold mb-3">5,000+</div>
+                    <p class="text-xl text-blue-100">Verified Drivers</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl lg:text-6xl font-extrabold mb-3">50,000+</div>
+                    <p class="text-xl text-blue-100">Deliveries Made</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl lg:text-6xl font-extrabold mb-3">200+</div>
+                    <p class="text-xl text-blue-100">Cities Connected</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl lg:text-6xl font-extrabold mb-3">4.8★</div>
+                    <p class="text-xl text-blue-100">Customer Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-6 py-2 bg-orange-100 text-accent rounded-full font-semibold mb-4 text-sm">FAQ</span>
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">
+                    Frequently Asked <span class="text-primary">Questions</span>
+                </h2>
+                <p class="text-xl text-secondary max-w-3xl mx-auto">Everything you need to know about FreightFlow</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition" data-aos="fade-up">
+                    <button class="w-full flex items-center justify-between text-left faq-button">
+                        <span class="font-bold text-lg text-dark">How do I get started with FreightFlow?</span>
+                        <i data-lucide="plus" class="w-6 h-6 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="hidden mt-4 text-secondary faq-content">
+                        Simply sign up for a free account, complete your profile, and start posting loads or browsing available shipments. Verification takes less than 24 hours.
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition" data-aos="fade-up">
+                    <button class="w-full flex items-center justify-between text-left faq-button">
+                        <span class="font-bold text-lg text-dark">Is there a subscription fee?</span>
+                        <i data-lucide="plus" class="w-6 h-6 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="hidden mt-4 text-secondary faq-content">
+                        We offer a forever-free basic plan with up to 5 shipments per month. For unlimited shipments and premium features, our Professional plan is just ₹999/month.
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition" data-aos="fade-up">
+                    <button class="w-full flex items-center justify-between text-left faq-button">
+                        <span class="font-bold text-lg text-dark">How are drivers verified?</span>
+                        <i data-lucide="plus" class="w-6 h-6 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="hidden mt-4 text-secondary faq-content">
+                        All drivers undergo thorough background checks, document verification (license, RC, insurance), and vehicle inspections before being approved on our platform.
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition" data-aos="fade-up">
+                    <button class="w-full flex items-center justify-between text-left faq-button">
+                        <span class="font-bold text-lg text-dark">What payment methods are accepted?</span>
+                        <i data-lucide="plus" class="w-6 h-6 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="hidden mt-4 text-secondary faq-content">
+                        We accept UPI, credit/debit cards, net banking, and bank transfers. All payments are secured with escrow protection and released only after successful delivery.
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition" data-aos="fade-up">
+                    <button class="w-full flex items-center justify-between text-left faq-button">
+                        <span class="font-bold text-lg text-dark">Is cargo insurance included?</span>
+                        <i data-lucide="plus" class="w-6 h-6 text-primary flex-shrink-0"></i>
+                    </button>
+                    <div class="hidden mt-4 text-secondary faq-content">
+                        Basic coverage is included with all shipments. You can purchase additional cargo insurance (up to ₹10L) at competitive rates during booking.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="quote" class="py-24 bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute w-96 h-96 bg-white rounded-full blur-3xl animate-float"></div>
+            <div class="absolute w-96 h-96 bg-white rounded-full blur-3xl bottom-0 right-0 animate-float" style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="zoom-in">
+                <h2 class="text-4xl lg:text-6xl font-extrabold mb-6">
+                    Ready to Transform Your Logistics?
+                </h2>
+                <p class="text-xl lg:text-2xl text-blue-100 mb-10">
+                    Join 10,000+ businesses and drivers who trust FreightFlow for efficient, cost-effective freight transportation
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="pages/register.html" class="bg-accent hover:bg-orange-600 text-white px-12 py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2">
+                        <i data-lucide="rocket" class="w-6 h-6"></i>
+                        Start Free Trial
+                    </a>
+                    <a href="#contact" class="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                        Talk to Sales
+                    </a>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-8 text-blue-100">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <span>14-day free trial</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <span>Cancel anytime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-dark text-gray-400 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-blue-700 rounded-xl flex items-center justify-center">
+                            <i data-lucide="truck" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">
+                            Freight<span class="text-primary">Flow</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        India's most trusted logistics platform connecting businesses with verified transport professionals nationwide.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i> Our Services
+                        </a></li>
+                        <li><a href="#features" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i> Features
+                        </a></li>
+                        <li><a href="#pricing" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i> Pricing
+                        </a></li>
+                        <li><a href="#testimonials" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i> Testimonials
+                        </a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i> Careers
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4"></i> Help Center
+                        </a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4"></i> Documentation
+                        </a></li>
+                        <li><a href="#faq" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="help-circle" class="w-4 h-4"></i> FAQ
+                        </a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="shield" class="w-4 h-4"></i> Safety Guidelines
+                        </a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center gap-2">
+                            <i data-lucide="video" class="w-4 h-4"></i> Video Tutorials
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Email</p>
+                                <a href="mailto:support@freightflow.in" class="hover:text-primary transition">
+                                    support@freightflow.in
+                                </a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5 text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Phone</p>
+                                <a href="tel:+911800123456" class="hover:text-primary transition">
+                                    +91 1800-123-456
+                                </a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Office</p>
+                                <span>Bangalore, Karnataka</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-gray-500 text-sm">
+                        © 2025 FreightFlow. All rights reserved. Made with ❤️ in India
+                    </p>
+                    <div class="flex flex-wrap gap-6 text-sm">
+                        <a href="#" class="text-gray-500 hover:text-primary transition">Privacy Policy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="#" class="text-gray-500 hover:text-primary transition">Terms of Service</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="#" class="text-gray-500 hover:text-primary transition">Cookie Policy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="#" class="text-gray-500 hover:text-primary transition">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary to-blue-700 text-white rounded-full opacity-0 invisible transition-all duration-300 hover:shadow-2xl flex items-center justify-center z-50 transform hover:scale-110">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Live Chat Button -->
+    <button class="fixed bottom-24 right-8 w-14 h-14 bg-accent hover:bg-orange-600 text-white rounded-full shadow-2xl flex items-center justify-center z-50 transform hover:scale-110 transition pulse-glow">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Quote Calculator
+        function calculateQuote() {
+            const result = document.getElementById('quote-result');
+            result.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            lucide.createIcons();
+        });
+
+        // Scroll to Top
+        const scrollTop = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTop.classList.remove('opacity-0', 'invisible');
+            } else {
+                scrollTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                content.classList.toggle('hidden');
+                icon.setAttribute('data-lucide', content.classList.contains('hidden') ? 'plus' : 'minus');
+                lucide.createIcons();
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#quote') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
